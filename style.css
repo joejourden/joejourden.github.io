@@ -1,0 +1,113 @@
+:root {
+  --text: #1f1f1f;
+  --muted: #666;
+  --accent: #1d4e89;      /* Columbia-ish navy */
+  --rule: #e2e2e2;
+  --bg: #fdfdfb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e6e6e3;
+    --muted: #a0a09b;
+    --accent: #8db8e8;
+    --rule: #333;
+    --bg: #161616;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 72px 20px 48px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.intro {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+h1 {
+  font-weight: 500;
+  font-size: 2.3rem;
+  margin: 0 0 4px;
+  letter-spacing: 0.01em;
+}
+.role { margin: 0 0 12px; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.95rem; }
+
+h2 {
+  font-weight: 500;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin: 44px 0 18px;
+}
+h3 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+}
+
+.paper { margin-bottom: 22px; }
+.paper p { margin: 0; }
+.paper-title { font-weight: 600; }
+.paper-title a { color: var(--text); }
+.paper-title a:hover { color: var(--accent); }
+.paper-status { color: var(--muted); font-size: 0.95rem; }
+
+details { margin-top: 4px; font-size: 0.95rem; }
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  list-style: none;
+  display: inline;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+ "; }
+details[open] summary::before { content: "− "; }
+details p { margin: 8px 0 0; text-align: justify; hyphens: auto; }
+
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 6px; }
+.year { color: var(--muted); white-space: nowrap; }
+
+footer {
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  body { font-size: 18px; }
+  main { padding-top: 40px; }
+  .intro { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .photo { width: 110px; height: 110px; }
+  h1 { font-size: 2rem; }
+}
